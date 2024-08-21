@@ -844,7 +844,7 @@ function main:Begin(PROPS)
         for _, colorButton in pairs(Color_Element:GetDescendants()) do
             if colorButton:IsA("TextButton") then
                 colorButton.MouseButton1Down:Connect(function()
-                    while UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton1,Enum.UserInputType.Touch) do
+                    while UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) do
                         local x = math.clamp(UIS:GetMouseLocation().X - colorButton.AbsolutePosition.X, 0, colorButton.AbsoluteSize.X)
                         local value = math.floor(x / colorButton.AbsoluteSize.X * 255 + 0.5)
                         local color = string.sub(colorButton.Name, 14, 14)
